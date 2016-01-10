@@ -1,0 +1,30 @@
+﻿{
+# 设备日志存储路径
+LogDir : "D:/logs",
+
+# PC本地预安装的APK文件路径
+ApkFilePath : "D:/201601061437.apk",
+
+# APK的包名称(命名空间)
+ApkPackageName : "com.abc.test",
+
+# APK引导Activity的类名
+ApkBootActivityClass : "com.abc.test.MainActivity",
+
+# 命令行
+Cmds : [
+{ ID : "1", Name : "连接设备", Cmd : "adb connect @id" },
+{ ID : "2", Name : "获取设备Mac地址", Cmd : "adb -s @id shell cat /sys/class/net/wlan0/address" },
+{ ID : "3", Name : "结束指定App进程", Cmd : "adb -s @id shell am force-stop @pn" },
+{ ID : "4", Name : "卸载指定App", Cmd : "adb -s @id uninstall @pn" },
+{ ID : "5", Name : "安装指定App", Cmd : "adb -s @id install -r @apk" },
+{ ID : "6", Name : "启动指定App", Cmd : "adb -s @id shell am start -n @pn/@cls" },
+{ ID : "7", Name : "断开设备", Cmd : "adb disconnect @id" }
+],
+
+# 移动设备
+Devices : [
+{ ID : "192.168.4.197:5555", Name : "HW-G750T01-1", Mac : "f8:01:13:3e:0e:ec" },
+{ ID : "192.168.4.84:5555", Name : "KP-7295PLUS-1", Mac : "18:dc:56:f0:1b:13" }
+]
+}
