@@ -1,0 +1,2 @@
+# ApkBatchInstaller
+通过wifi批量安装apk到多Android设备中
